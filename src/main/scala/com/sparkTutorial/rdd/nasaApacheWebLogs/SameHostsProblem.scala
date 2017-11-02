@@ -33,7 +33,7 @@ object SameHostsProblem {
       .map(l => l.split("\t")(0))
       .intersection(julyLogs.map(l => l.split("\t")(0)))
 
-    val cleanedIntersection = intersection.filter(l => !(l.startsWith("host") && l.contains("logname")))
+    val cleanedIntersection = intersection.filter(l => !l.startsWith("host"))
 
     cleanedIntersection.saveAsTextFile("out/common-hosts-nasa")
   }
