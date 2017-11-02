@@ -1,5 +1,6 @@
 package com.sparkTutorial.rdd.nasaApacheWebLogs
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object SameHostsProblem {
@@ -21,6 +22,8 @@ object SameHostsProblem {
 
        Make sure the head lines are removed in the resulting RDD.
      */
+    Logger.getLogger("org").setLevel(Level.OFF)
+
     val conf = new SparkConf().setAppName("SameHostsNasa").setMaster("local[*]")
 
     val sc = new SparkContext(conf)
