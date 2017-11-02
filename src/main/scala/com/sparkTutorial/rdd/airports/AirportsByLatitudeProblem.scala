@@ -28,7 +28,7 @@ object AirportsByLatitudeProblem {
 
     val airportsAndLatitude = airportsRequiredLatitude.map(l => {
       val split = l.split(Utils.COMMA_DELIMITER)
-      s"""${split(2)} ${split(6)}"""
+      s"""${split(1)} ${split(6)}"""
      }
     )
 
